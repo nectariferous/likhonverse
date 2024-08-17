@@ -1,87 +1,28 @@
-<?php
-ini_set('memory_limit', '256M');
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stripe Key Checker</title>
+    
+    <!-- OG Metadata -->
+    <meta property="og:title" content="Stripe Key Checker">
+    <meta property="og:description" content="A tool to check the validity of your Stripe secret keys and retrieve account details.">
+    <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:site_name" content="Your Site Name">
+    
+    <!-- Twitter Card Metadata -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Stripe Key Checker">
+    <meta property="twitter:description" content="A tool to check the validity of your Stripe secret keys and retrieve account details.">
+    <meta property="twitter:image" content="https://yourwebsite.com/path-to-image.jpg">
+
+    <!-- SEO Metadata -->
+    <meta name="description" content="A tool to check the validity of your Stripe secret keys and retrieve account details.">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .input-group {
-            margin-bottom: 15px;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .input-group button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .input-group button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #fafafa;
-        }
-        .success {
-            color: #28a745;
-        }
-        .error {
-            color: #dc3545;
-        }
-        .details {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-        }
-        .details p {
-            margin: 0 0 5px;
-        }
-        .details span {
-            font-weight: bold;
-        }
+        /* Your CSS styles here */
     </style>
 </head>
 <body>
@@ -99,8 +40,8 @@ ini_set('memory_limit', '256M');
         function checkKey() {
             const key = document.getElementById('stripeKey').value;
             const resultDiv = document.getElementById('result');
-            require 'vendor/autoload.php';
-            fetch('/validate_key.php', {  // Ensure your PHP endpoint is correct
+
+            fetch('/validate_key.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
