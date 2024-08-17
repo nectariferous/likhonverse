@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "sk.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "validate_key.php",
+      "use": "@vercel/php"
+    },
+    {
+      "src": "StripeValidator.php",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    { "src": "/index.php", "dest": "/index.php" },
+    { "src": "/sk.php", "dest": "/sk.php" },
+    { "src": "/validate_key.php", "dest": "/validate_key.php" },
+    { "src": "/StripeValidator.php", "dest": "/StripeValidator.php" }
+  ]
+}
